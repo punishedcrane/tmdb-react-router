@@ -1,13 +1,30 @@
-// src/App.js
+
 import React from 'react';
 import MovieList from './components/MovieList';
 import './App.css';
+import About from './components/About';
+import Navbar from './components/Navbar'
+import { BrowserRouter,Route,Routes } from 'react-router-dom';
 
 function App() {
   return (
+    
     <div className="container">
-      <h1 className="text-center my-4">Popular Movies</h1>
-      <MovieList />
+      
+      {/* <Navbar/>
+      <About/>
+      <MovieList /> */}
+
+    
+       <div className='App'>
+        <Navbar/>
+        
+        <Routes>
+          <Route path ="/" element={<MovieList/>}></Route>
+          <Route path="about" element={<About/>}></Route>
+        </Routes>
+       </div>
+        
     </div>
   );
 }
